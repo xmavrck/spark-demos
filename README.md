@@ -7,7 +7,7 @@ These are some basic demos for spark
 
 # Installation
 - Go to command line or terminal and run below command to build the executable jar
-sbt assembly
+`sbt assembly`
 
 - And then Just run this command to execute your spark job
-$SPARK_HOME/spark-submit --class com.xenonstack.examples.spark.SparkWordCountDemo <-your-executable-jar-path->
+`$SPARK_HOME/spark-submit --class com.xenonstack.examples.spark.SparkWordCountDemo <-your-executable-jar-path->`
