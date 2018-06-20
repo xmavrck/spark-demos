@@ -4,6 +4,7 @@ These are some basic demos for spark
 # Enviroment
 - Scala 2.11.8
 - Spark 2.3.0
+- JDK 1.8
 
 # Installation
 - Go to command line or terminal and run below command to build the executable jar
