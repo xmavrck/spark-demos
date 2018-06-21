@@ -3,6 +3,7 @@ package com.xenonstack.examples.spark.com.xenonstack.examples.spark.sql
 import org.apache.spark.sql.{Dataset, Row, SparkSession}
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.sql.functions.explode
 
 object DataSetExample {
 
@@ -18,15 +19,13 @@ object DataSetExample {
 
     val df = spark.read.json(BASE_PATH + "/user.json")
 
-    df.printSchema()
 
     df.createOrReplaceTempView("users")
 
-//    val explodedDF:Dataset[Row]=df.explode()
-//
-//    explodedDF.
-//
-//    spark.sql("select results from users limit 10").show()
+//    SELECT id, part.lock, part.key FROM mytable EXTERNAL VIEW explode(parts) parttable AS part;
+
+    spark.sql("select results.name,results.gender,results.company from users  EXTERNAL VIEW explode(results) parttable AS results ").show()
+
 
   }
 }
